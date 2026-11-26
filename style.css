@@ -1,6 +1,82 @@
-body{font-family:Georgia,serif;max-width:760px;margin:0 auto;padding:24px 18px;line-height:1.65;color:#222;background:#fffdf8}
-header,footer{margin:24px 0} a{color:#b42318} h1{font-size:32px;line-height:1.2} h2{font-size:24px;margin-top:32px}
-.card{border:1px solid #e8ddd0;border-radius:12px;padding:18px;margin:16px 0;background:#fff}
-.meta{color:#666;font-size:14px} .tag{display:inline-block;background:#fde8e0;padding:4px 10px;border-radius:20px;font-size:13px;margin:2px}
-img{max-width:100%;border-radius:10px} .steps li{margin:10px 0}
-.notice{background:#fff3cd;border:1px solid #f0d48a;padding:12px;border-radius:8px}
+/* DIY and Crafts — warm cream / terracotta / sage theme
+   Palette: cream #FFFBF5, white cards, charcoal #2B2118, terracotta #C14A2A, sage #5F7A5A, muted gold #C9A86A */
+:root{
+  --cream:#FFFBF5; --white:#FFFFFF; --ink:#2B2118; --muted:#6B5D4F;
+  --terra:#C14A2A; --terra-dark:#A03D22; --sage:#5F7A5A; --sage-light:#E8EEE6;
+  --gold:#C9A86A; --gold-light:#F6EEDD; --border:#EADFD2; --shadow:0 6px 24px rgba(43,33,24,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.65;color:var(--ink);background:var(--cream)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.2;color:var(--ink)}
+a{color:var(--terra);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+.container{max-width:1120px;margin:0 auto;padding:0 20px}
+.narrow{max-width:760px;margin:0 auto;padding:0 20px}
+/* Top nav */
+.topnav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.topnav-inner{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.logo{font-family:Georgia,serif;font-size:26px;font-weight:700;color:var(--ink)}
+.logo span{color:var(--terra)}
+.topnav nav{display:flex;gap:22px;flex-wrap:wrap}
+.topnav nav a{color:var(--ink);font-weight:600}
+.topnav nav a:hover{color:var(--terra)}
+/* Hero */
+.hero{text-align:center;padding:56px 20px 40px;max-width:820px;margin:0 auto}
+.hero .eyebrow{color:var(--sage);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+.hero h1{font-size:44px;margin:12px 0}
+.hero p{font-size:19px;color:var(--muted);margin:0 auto 24px;max-width:640px}
+.btn{display:inline-block;background:var(--terra);color:#fff;padding:13px 26px;border-radius:999px;font-weight:700}
+.btn:hover{background:var(--terra-dark);color:#fff;text-decoration:none}
+.btn-secondary{display:inline-block;background:var(--sage);color:#fff;padding:13px 26px;border-radius:999px;font-weight:700}
+.btn-secondary:hover{background:#4E664B;color:#fff;text-decoration:none}
+/* Sections */
+section{padding:28px 0}
+section h2{font-size:30px;margin:0 0 8px}
+.section-sub{color:var(--muted);margin:0 0 24px}
+/* Post cards grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card-body h3{margin:0;font-size:21px}
+.card-body h3 a{color:var(--ink)}
+.card-body h3 a:hover{color:var(--terra)}
+.card-body p{margin:0;color:var(--muted)}
+.tag{display:inline-block;background:var(--gold-light);color:#7A5A1F;padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;margin:0 4px 4px 0}
+.tag-sage{display:inline-block;background:var(--sage-light);color:var(--sage);padding:4px 10px;border-radius:999px;font-size:13px;font-weight:600;margin:0 4px 4px 0}
+.meta{color:var(--muted);font-size:14px}
+.meta strong{color:var(--ink)}
+/* Mission */
+.mission{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:32px;box-shadow:var(--shadow)}
+.mission h2{margin-top:0}
+.mission p{color:var(--muted)}
+/* Categories */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.cat-card{display:block;background:var(--white);border:1px solid var(--border);border-radius:16px;padding:22px;box-shadow:var(--shadow);color:var(--ink)}
+.cat-card:hover{border-color:var(--terra);text-decoration:none}
+.cat-card h3{margin:0 0 6px;font-size:20px}
+.cat-card p{margin:0;color:var(--muted);font-size:15px}
+.cat-card .count{color:var(--terra);font-weight:700;font-size:13px}
+/* Article */
+.article{max-width:760px;margin:0 auto;padding:32px 20px}
+.article img.hero-img{width:100%;border-radius:16px;box-shadow:var(--shadow)}
+.article h1{font-size:36px}
+.article h2{font-size:25px;margin-top:34px}
+.article ul,.article ol{padding-left:22px}
+.steps li{margin:10px 0}
+.byline{display:flex;gap:12px;align-items:center;color:var(--muted);font-size:15px;margin:16px 0}
+.avatar{width:44px;height:44px;border-radius:50%;background:var(--terra);color:#fff;display:flex;align-items:center;justify-content:center;font-family:Georgia,serif;font-weight:700;font-size:20px;flex-shrink:0}
+.related{margin-top:44px;border-top:1px solid var(--border);padding-top:24px}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.related a{display:block;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:14px;color:var(--ink);font-weight:600}
+.notice{background:var(--gold-light);border:1px solid var(--gold);padding:12px;border-radius:8px}
+/* Footer */
+footer{background:#2B2118;color:#F3EAD9;margin-top:48px;padding:36px 20px}
+footer a{color:#F3EAD9}
+footer a:hover{color:var(--gold)}
+.footer-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer .meta{color:#CBBFA9}
+/* Responsive */
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.cat-grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:36px}}
+@media (max-width:600px){.grid,.cat-grid,.related-grid{grid-template-columns:1fr}.hero{padding:36px 20px 28px}.hero h1{font-size:30px}.hero p{font-size:17px}.article h1{font-size:28px}.topnav-inner{justify-content:center;text-align:center}}
